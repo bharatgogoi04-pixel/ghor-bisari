@@ -1,0 +1,25 @@
+{
+  "id": "/",
+  "name": "ঘৰ বিচাৰি | GHOR BISARI",
+  "short_name": "GHOR BISARI",
+  "description": "Find rental houses, single rooms, PGs, and hostels across all 35 Assam districts. Connect directly.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "theme_color": "#064E3B",
+  "background_color": "#FFFDF5",
+  "icons": [
+    {
+      "src": "/pwa-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

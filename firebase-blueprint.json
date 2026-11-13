@@ -1,0 +1,55 @@
+{
+  "entities": {
+    "Owner": {
+      "title": "Owner",
+      "description": "Property owner profile",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string", "maxLength": 100 },
+        "email": { "type": "string", "format": "email" },
+        "phone": { "type": "string", "maxLength": 20 },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "name", "email", "phone"]
+    },
+    "Property": {
+      "title": "Property",
+      "description": "Rental property listing with UPI payment verification and 30-day validity",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "ownerId": { "type": "string" },
+        "ownerName": { "type": "string" },
+        "title": { "type": "string", "maxLength": 200 },
+        "category": { "type": "string" },
+        "photos": { "type": "array" },
+        "monthlyRent": { "type": "number" },
+        "district": { "type": "string" },
+        "area": { "type": "string" },
+        "fullAddress": { "type": "string" },
+        "availableRooms": { "type": "number" },
+        "description": { "type": "string", "maxLength": 2000 },
+        "contactPhone": { "type": "string" },
+        "status": { "type": "string", "enum": ["PAYMENT_PENDING", "PENDING_APPROVAL", "AVAILABLE", "RENTED", "EXPIRED"] },
+        "paymentStatus": { "type": "string", "enum": ["PENDING", "VERIFIED", "REJECTED"] },
+        "utrNumber": { "type": "string" },
+        "paymentScreenshot": { "type": "string" },
+        "expiresAt": { "type": "string" },
+        "createdAt": { "type": "string" },
+        "amenities": { "type": "array" }
+      },
+      "required": ["id", "ownerId", "ownerName", "title", "category", "monthlyRent", "district", "area", "status", "paymentStatus"]
+    }
+  },
+  "firestore": {
+    "/owners/{ownerId}": {
+      "schema": "Owner",
+      "description": "Owner profiles"
+    },
+    "/properties/{propertyId}": {
+      "schema": "Property",
+      "description": "Property listings with payment and approval workflow"
+    }
+  }
+}

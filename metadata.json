@@ -1,0 +1,6 @@
+{
+  "name": "GHOR BISARI - ঘৰ বিচাৰি",
+  "description": "Find Your Home. Connect Directly. Rental house and accommodation finder across all 35 Assam districts.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
